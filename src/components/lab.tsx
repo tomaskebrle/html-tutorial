@@ -11,7 +11,7 @@ export const Lab: React.FC<LabProps> = ({ markdown }) => {
   return (
     <ResizablePanelGroup direction="horizontal" className="h-screen w-screen">
       <ResizablePanel>
-        <Markdown className="h-screen w-full prose prose-md prose-code:text-base prose-pre:bg-gray-100 pt-4 px-8" rehypePlugins={[rehypeHighlight]}>
+        <Markdown className="h-screen w-full overflow-scroll pb-32 prose prose-md prose-code:text-base prose-pre:bg-gray-100 pt-4 px-8" rehypePlugins={[rehypeHighlight]}>
           {markdown}
         </Markdown>
       </ResizablePanel>
