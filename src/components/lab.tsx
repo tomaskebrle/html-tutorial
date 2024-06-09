@@ -1,22 +1,40 @@
+import { cn } from "@/lib/utils";
+import { ChevronRight } from "lucide-react";
 import Markdown from "react-markdown";
+import { Link } from "react-router-dom";
 import rehypeHighlight from "rehype-highlight";
+import rehypeRaw from "rehype-raw";
+import remarkGfm from "remark-gfm";
 import { EditorWithPreview } from "./editor-with-preview";
+import { buttonVariants } from "./ui/button";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "./ui/resizable";
 
 type LabProps = {
   markdown: string;
+  link: string;
 };
 
-export const Lab: React.FC<LabProps> = ({ markdown }) => {
+export const Lab: React.FC<LabProps> = ({ markdown, link }) => {
   return (
     <ResizablePanelGroup direction="horizontal" className="h-screen w-screen">
-      <ResizablePanel>
-        <Markdown className="h-screen w-full overflow-scroll pb-32 prose prose-md prose-code:text-base prose-pre:bg-gray-100 pt-4 px-8" rehypePlugins={[rehypeHighlight]}>
+      <ResizablePanel className="h-screen flex flex-col" defaultSize={1 / 3}>
+        <Markdown
+          className="flex-grow w-full overflow-scroll pb-32 prose prose-code:before:content-[''] prose-p:before:content-[''] prose-code:after:content-[''] prose-p:after:content-[''] prose-code:font-mono prose-code:bg-gray-100 prose-code:rounded prose-code:p-1 prose-code:text-sm prose-blockquote:font-normal  prose-pre:bg-gray-100 pt-4 px-8 prose-blockquote:not-italic"
+          rehypePlugins={[rehypeHighlight, remarkGfm, rehypeRaw]}
+        >
           {markdown}
         </Markdown>
+
+        <span className="p-4 border-t border-gray-200 flex justify-between items-center">
+          HTML Tutorial
+          <Link to={link} className={cn(buttonVariants())}>
+            Další lab
+            <ChevronRight />
+          </Link>
+        </span>
       </ResizablePanel>
       <ResizableHandle withHandle />
-      <ResizablePanel>
+      <ResizablePanel defaultSize={2 / 3}>
         <EditorWithPreview></EditorWithPreview>
       </ResizablePanel>
     </ResizablePanelGroup>

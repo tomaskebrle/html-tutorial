@@ -1,82 +1,15 @@
-# HTML tutoriál
-## Co je HTML?
-### Tag
-Každý tag má svůj význam. Tagy se píšou do ostrých závorek. Například `<p>` je tag pro odstavec. Tagy se vždy uzavírají. Například `</p>` uzavírá tag pro odstavec.
+# Lab 1 - můj první tag
 
+Každá stránka se skládá z tagů. Ze spousty tagů ve skutečnosti. Nevěříte mi? Zmačkněte <kbd>Ctrl</kbd> + <kbd>Shift</kbd> a <kbd>I</kbd> a prozkoumejte z jakých tagů se skládá tato stránka. Například taková stránka našeho gymnázia se skládá z <span class="bg-black text-black hover:bg-transparent duration-300 cursor-help">2098</span> individuálních tagů.
 
-Napiš svůj první tag
+## Anatomie tagu
 
-```html
-<p>Ahoj světe!</p>
-```
+1. Každý tag je ohraničen špičatýmí závorky `<>`, ty napíšete pomocí <kbd>Alt Gr</kbd> + <kbd>&gt;</kbd> nebo <kbd>Alt Gr</kbd> + <kbd>&lt;</kbd>.
+2. Po `<` hned následuje jméno tagu, například `<p>`. Ve jméně tagu se nesmí vyskytovat mezery a diakritika.
+3. Mezi otevíracím a uzavírácím tagem vložíme obsah tagu, například text. Nebo jiné tagy.
+4. Každý tag musí být uzavřen. Uzavírací tag se liší od otevíracího tím, že obsahuje lomítko `/`, například `</p>`.
 
-Máme různé tagy pro různé věci. Například tag `<h1>` je pro nadpis první úrovně. Tag `<h2>` je pro nadpis druhé úrovně. Tag `<h3>` je pro nadpis třetí úrovně a tak dále.
-
-```html
-<h1>První nadpis</h1>
-<h2>Druhý nadpis</h2>
-<h3>Třetí nadpis</h3>
-```
-
-### Atributy
-Tagy mohou mít i atributy. Atributy se píšou do tagu jako vlastnosti. Například tag `<a>` má atribut `href`, který určuje odkaz.
-
-```html
-<a href="https://www.google.com">Odkaz na Google</a>
-```
-
-### Vnořování
-Tagy můžeme vnořovat. To znamená, že můžeme jeden tag vložit do druhého tagu. Například můžeme vložit odkaz do odstavce.
-
-```html
-<p>Text s <a href="https://www.google.com">odkazem</a>.</p>
-```
-
-
----
-## Seznam bežných tagů
-Není nutné si je pamatovat, uvádím spíš pro přehled toho, co je možné.
-
-### Text
-- `<p>` - odstavec
-- `<h1>`, `<h2>`, `<h3>`, ... - nadpisy
-- `<a>` - odkaz
-
-### Obrázky a multimédia
-- `<img>` - obrázek
-- `<video>` - video
-
-### Jiné
-- `<div>` - blokový element
-- `<span>` - řádkový element
-
-### Seznamy
-- `<ul>` - nečíslovaný seznam
-- `<ol>` - číslovaný seznam
-- `<li>` - položka seznamu
-
-
----
-## Naše první využití HTML
-V rámci tohoto cvičení si postupně vytvoříme osobní webovou stránku. Na této stránce se představíme a něco o sobě napíšeme. Kdyby vás to zaujalo a měli by jste moc volného času, tak lze vytvořit i něco [takového](https://tomaskebrle.cz/) nebo [takového](https://vaclavparma.cz/).
-
-> Do kódu umístím komentáře, které vysvětlují, co který kód dělá. Komentáře se v HTML píší mezi `<!--` a `-->`. Například:
-> ```html
-> <!-- Tohle je komentář -->
-> ```
-> Komentáře můžete vymazat a funkčnost se nezmění.
-
-Na začátek si vytvoříme základní strukturu HTML dokumentu. Tato struktura je pro každý HTML dokument stejná.
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-</head>
-<body>
-    
-</body>
-</html>
-```
-
+> ### Cvičení 1.
+>
+> Napiš vlastní tag: `p` a do něj vlož text _Ahoj světe_.
+> V okně pod editorem by se ti mělo zobrazit Ahoj světe.
